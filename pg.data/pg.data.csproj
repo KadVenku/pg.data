@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\kv.utility\kv.util\kv.util.csproj" />
+    <ProjectReference Include="..\..\pg.utils\pg.util\pg.util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data\objects\gameobjects\impl\" />
+  </ItemGroup>
+
 </Project>

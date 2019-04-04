@@ -1,10 +1,9 @@
 namespace pg.data.data.objects.parameters.interfaces
 {
-    public interface IParameter<TParameter, in TParameterType>
+    public interface IParameter<T> : IParam
     {
-        TParameter GetValue();
-        void SetValue(string value, TParameterType type);
-        void SetValue(TParameter value);
-        string ToString();
+        T GetValue();
+        void SetValueByString(string value);
+        void SetValue(T value);
     }
 }
