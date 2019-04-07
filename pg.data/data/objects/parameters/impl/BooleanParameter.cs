@@ -17,6 +17,11 @@ namespace pg.data.data.objects.parameters.impl
             return BooleanUtility.Parse(GetValue());
         }
 
+        public string ToString(BooleanUtility.PetroglyphBoolType boolType)
+        {
+            return BooleanUtility.Parse(GetValue(), boolType);
+        }
+
         public override PetroglyphParameterType GetParameterType()
         {
             return PetroglyphParameterType.BooleanType;

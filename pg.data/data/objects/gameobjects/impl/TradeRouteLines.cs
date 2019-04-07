@@ -4,11 +4,15 @@ namespace pg.data.data.objects.gameobjects.impl
 {
     public sealed class TradeRouteLines : AbstractGameObjectType
     {
-        public readonly StringParameter Width = new StringParameter("width");
-        public readonly StringParameter ColorZoomedOut = new StringParameter("color_zoomed_out");
-        public readonly StringParameter ColorZoomedIn = new StringParameter("color_zoomed_in");
-        public readonly StringParameter RenderMode = new StringParameter("render_mode");
-        public readonly StringParameter TextureName = new StringParameter("texture_name");
-        public readonly StringParameter SparkTextureName = new StringParameter("spark_texture_name");
+        public StringParameter Width { get; } = new StringParameter("width");
+        public StringParameter ColorZoomedOut { get; } = new StringParameter("color_zoomed_out");
+        public StringParameter ColorZoomedIn { get; } = new StringParameter("color_zoomed_in");
+        public StringParameter RenderMode { get; } = new StringParameter("render_mode");
+        public StringParameter TextureName { get; } = new StringParameter("texture_name");
+        public StringParameter SparkTextureName { get; } = new StringParameter("spark_texture_name");
+
+        public TradeRouteLines(string id) : base(id)
+        {
+        }
     }
 }

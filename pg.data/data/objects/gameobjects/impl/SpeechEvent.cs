@@ -4,8 +4,12 @@ namespace pg.data.data.objects.gameobjects.impl
 {
     public sealed class SpeechEvent : AbstractGameObjectType
     {
-        public readonly StringParameter Files = new StringParameter("files");
-        public readonly StringParameter TextId = new StringParameter("text_id");
-        public readonly StringParameter VolumePercent = new StringParameter("volume_percent");
+        public StringParameter Files { get; } = new StringParameter("files");
+        public StringParameter TextId { get; } = new StringParameter("text_id");
+        public StringParameter VolumePercent { get; } = new StringParameter("volume_percent");
+
+        public SpeechEvent(string id) : base(id)
+        {
+        }
     }
 }

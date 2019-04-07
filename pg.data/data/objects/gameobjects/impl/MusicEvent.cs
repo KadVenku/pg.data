@@ -4,11 +4,15 @@ namespace pg.data.data.objects.gameobjects.impl
 {
     public sealed class MusicEvent : AbstractGameObjectType
     {
-        public readonly StringParameter Files = new StringParameter("files");
-        public readonly StringParameter VolumePercent = new StringParameter("volume_percent");
-        public readonly StringParameter FadeInSeconds = new StringParameter("fade_in_seconds");
-        public readonly StringParameter FadeOutPreviousSeconds = new StringParameter("fade_out_previous_seconds");
-        public readonly StringParameter Loop = new StringParameter("loop");
-        public readonly StringParameter MssInternalLoop = new StringParameter("mss_internal_loop");
+        public StringParameter Files { get; } = new StringParameter("files");
+        public StringParameter VolumePercent { get; } = new StringParameter("volume_percent");
+        public StringParameter FadeInSeconds { get; } = new StringParameter("fade_in_seconds");
+        public StringParameter FadeOutPreviousSeconds { get; } = new StringParameter("fade_out_previous_seconds");
+        public StringParameter Loop { get; } = new StringParameter("loop");
+        public StringParameter MssInternalLoop { get; } = new StringParameter("mss_internal_loop");
+
+        public MusicEvent(string id) : base(id)
+        {
+        }
     }
 }

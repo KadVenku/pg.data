@@ -4,29 +4,33 @@ namespace pg.data.data.objects.gameobjects.impl
 {
     public sealed class HeroClashType : AbstractGameObjectType
     {
-        public readonly StringParameter ClashType = new StringParameter("clash_type");
-        public readonly StringParameter ClashRange = new StringParameter("clash_range");
-        public readonly StringParameter InvolvedHeroTypes = new StringParameter("involved_hero_types");
-        public readonly StringParameter PlayConversationEvents = new StringParameter("play_conversation_events");
-        public readonly StringParameter CombatDistance = new StringParameter("combat_distance");
-        public readonly StringParameter DamageAmount = new StringParameter("damage_amount");
-        public readonly StringParameter DamagePercentage = new StringParameter("damage_percentage");
-        public readonly StringParameter FirstHeroDamageMultiplier = new StringParameter("first_hero_damage_multiplier");
-        public readonly StringParameter SecondHeroDamageMultiplier = new StringParameter("second_hero_damage_multiplier");
-        public readonly StringParameter FirstHeroWinExchangeChance = new StringParameter("first_hero_win_exchange_chance");
-        public readonly StringParameter SecondHeroWinExchangeChance = new StringParameter("second_hero_win_exchange_chance");
-        public readonly StringParameter FirstHeroType = new StringParameter("first_hero_type");
-        public readonly StringParameter FirstHeroWinAnimType = new StringParameter("first_hero_win_anim_type");
-        public readonly StringParameter FirstHeroLoseAnimType = new StringParameter("first_hero_lose_anim_type");
-        public readonly StringParameter FirstHeroDrawAnimType = new StringParameter("first_hero_draw_anim_type");
-        public readonly StringParameter FirstHeroConversationAnimType = new StringParameter("first_hero_conversation_anim_type");
-        public readonly StringParameter SecondHeroType = new StringParameter("second_hero_type");
-        public readonly StringParameter SecondHeroWinAnimType = new StringParameter("second_hero_win_anim_type");
-        public readonly StringParameter SecondHeroLoseAnimType = new StringParameter("second_hero_lose_anim_type");
-        public readonly StringParameter SecondHeroDrawAnimType = new StringParameter("second_hero_draw_anim_type");
-        public readonly StringParameter SecondHeroConversationAnimType = new StringParameter("second_hero_conversation_anim_type");
-        public readonly StringParameter FirstHeroWinSpeech = new StringParameter("first_hero_win_speech");
-        public readonly StringParameter SecondHeroWinSpeech = new StringParameter("second_hero_win_speech");
-        public readonly StringParameter ClashActions = new StringParameter("clash_actions");
+        public StringParameter ClashType { get; } = new StringParameter("clash_type");
+        public StringParameter ClashRange { get; } = new StringParameter("clash_range");
+        public StringParameter InvolvedHeroTypes { get; } = new StringParameter("involved_hero_types");
+        public StringParameter PlayConversationEvents { get; } = new StringParameter("play_conversation_events");
+        public StringParameter CombatDistance { get; } = new StringParameter("combat_distance");
+        public StringParameter DamageAmount { get; } = new StringParameter("damage_amount");
+        public StringParameter DamagePercentage { get; } = new StringParameter("damage_percentage");
+        public StringParameter FirstHeroDamageMultiplier { get; } = new StringParameter("first_hero_damage_multiplier");
+        public StringParameter SecondHeroDamageMultiplier { get; } = new StringParameter("second_hero_damage_multiplier");
+        public StringParameter FirstHeroWinExchangeChance { get; } = new StringParameter("first_hero_win_exchange_chance");
+        public StringParameter SecondHeroWinExchangeChance { get; } = new StringParameter("second_hero_win_exchange_chance");
+        public StringParameter FirstHeroType { get; } = new StringParameter("first_hero_type");
+        public StringParameter FirstHeroWinAnimType { get; } = new StringParameter("first_hero_win_anim_type");
+        public StringParameter FirstHeroLoseAnimType { get; } = new StringParameter("first_hero_lose_anim_type");
+        public StringParameter FirstHeroDrawAnimType { get; } = new StringParameter("first_hero_draw_anim_type");
+        public StringParameter FirstHeroConversationAnimType { get; } = new StringParameter("first_hero_conversation_anim_type");
+        public StringParameter SecondHeroType { get; } = new StringParameter("second_hero_type");
+        public StringParameter SecondHeroWinAnimType { get; } = new StringParameter("second_hero_win_anim_type");
+        public StringParameter SecondHeroLoseAnimType { get; } = new StringParameter("second_hero_lose_anim_type");
+        public StringParameter SecondHeroDrawAnimType { get; } = new StringParameter("second_hero_draw_anim_type");
+        public StringParameter SecondHeroConversationAnimType { get; } = new StringParameter("second_hero_conversation_anim_type");
+        public StringParameter FirstHeroWinSpeech { get; } = new StringParameter("first_hero_win_speech");
+        public StringParameter SecondHeroWinSpeech { get; } = new StringParameter("second_hero_win_speech");
+        public StringParameter ClashActions { get; } = new StringParameter("clash_actions");
+
+        public HeroClashType(string id) : base(id)
+        {
+        }
     }
 }

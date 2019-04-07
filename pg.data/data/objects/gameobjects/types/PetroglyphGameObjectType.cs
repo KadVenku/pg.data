@@ -2,6 +2,7 @@
 {
     public enum PetroglyphGameObjectType
     {
-        
+        Invalid = -1,
+        GameObjectType
     }
 }

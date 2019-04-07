@@ -4,6 +4,10 @@ namespace pg.data.data.objects.gameobjects.impl
 {
     public sealed class GalacticStealthAbility : AbstractGameObjectType
     {
-        public readonly StringParameter EvadeDetectionChance = new StringParameter("evade_detection_chance");
+        public StringParameter EvadeDetectionChance { get; } = new StringParameter("evade_detection_chance");
+
+        public GalacticStealthAbility(string id) : base(id)
+        {
+        }
     }
 }
