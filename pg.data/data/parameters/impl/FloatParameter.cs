@@ -4,7 +4,7 @@ using pg.util;
 
 namespace pg.data.data.parameters.impl
 {
-    public sealed class FloatParameter : AbstractParameter<float>
+    public class FloatParameter : AbstractParameter<float>
     {
         public override void SetValueByString(string value)
         {
@@ -20,6 +20,11 @@ namespace pg.data.data.parameters.impl
         public override PetroglyphParameterType GetParameterType()
         {
             return PetroglyphParameterType.FloatType;
+        }
+
+        protected override float GetDefaultValue()
+        {
+            return 0f;
         }
 
         public string ToString(int decimalPlaces)

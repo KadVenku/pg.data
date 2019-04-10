@@ -2,7 +2,7 @@
 
 namespace pg.data.data.parameters.impl
 {
-    public sealed class StringParameter : AbstractParameter<string>
+    public class StringParameter : AbstractParameter<string>
     {
         public override void SetValueByString(string value)
         {
@@ -17,6 +17,11 @@ namespace pg.data.data.parameters.impl
         public override PetroglyphParameterType GetParameterType()
         {
             return PetroglyphParameterType.StringType;
+        }
+
+        protected override string GetDefaultValue()
+        {
+            return string.Empty;
         }
 
         public StringParameter(string id) : base(id)

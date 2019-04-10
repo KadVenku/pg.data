@@ -8,6 +8,7 @@ namespace pg.data.data.parameters.impl
     {
         private readonly string _id;
         protected T _value;
+        private bool _valueInitallySet = false;
 
         public AbstractParameter(string id)
         {
@@ -16,7 +17,7 @@ namespace pg.data.data.parameters.impl
 
         public virtual T GetValue()
         {
-            return _value;
+            return _valueInitallySet ? _value : GetDefaultValue();
         }
 
         public abstract void SetValueByString(string value);
@@ -35,8 +36,11 @@ namespace pg.data.data.parameters.impl
 
         public abstract PetroglyphParameterType GetParameterType();
 
+        protected abstract T GetDefaultValue();
+
         public virtual void SetValue(T value)
         {
+            _valueInitallySet = true;
             _value = value;
         }
     }
