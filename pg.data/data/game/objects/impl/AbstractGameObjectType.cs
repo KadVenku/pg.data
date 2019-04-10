@@ -22,17 +22,28 @@ namespace pg.data.data.game.objects.impl
 
         public virtual PetroglyphGameObjectType GetObjectType() => PetroglyphGameObjectType.Invalid;
 
-        public IParam GetParameterById(string id)
+        public IParameterWrapper GetParameterById(string id)
         {
             foreach (PropertyInfo property in GetType().GetProperties())
             {
-                if (!(property.GetValue(this) is IParam param)) continue;
+                if (!(property.GetValue(this) is IParameterWrapper param)) continue;
                 if (StringUtility.IsEqual(param.GetId(), id, StringUtility.Comparison.IgnoreCase))
                 {
                     return param;
                 }
             }
             return null;
+        }
+
+        public void SetParameterById(string id, string value)
+        {
+            foreach (PropertyInfo property in GetType().GetProperties())
+            {
+                if (!(property.GetValue(this) is IParameterWrapper param)) continue;
+                if (!StringUtility.IsEqual(param.GetId(), id, StringUtility.Comparison.IgnoreCase)) continue;
+                param.SetValueByString(value);
+                break;
+            }
         }
     }
 }

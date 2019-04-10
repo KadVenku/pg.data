@@ -7,10 +7,10 @@ namespace pg.data.data.parameters.impl
     public abstract class AbstractParameter<T> : IParameter<T>
     {
         private readonly string _id;
-        protected T _value;
+        private T _value;
         private bool _valueInitallySet = false;
 
-        public AbstractParameter(string id)
+        protected AbstractParameter(string id)
         {
             _id = id;
         }

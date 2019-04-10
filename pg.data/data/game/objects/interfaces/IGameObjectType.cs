@@ -7,6 +7,7 @@ namespace pg.data.data.game.objects.interfaces
     {
         string GetObjectId();
         PetroglyphGameObjectType GetObjectType();
-        IParam GetParameterById(string id);
+        IParameterWrapper GetParameterById(string id);
+        void SetParameterById(string id, string value);
     }
 }
