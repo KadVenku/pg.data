@@ -9,4 +9,9 @@
     <ProjectReference Include="..\..\pg.utils\pg.util\pg.util.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="data\game\objects\interfaces" />
+    <Folder Include="data\parameters" />
+  </ItemGroup>
+
 </Project>
