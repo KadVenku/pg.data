@@ -1,5 +1,4 @@
 ﻿using System;
-using pg.data.data.parameters.types;
 
 namespace pg.data.data.parameters.interfaces
 {
@@ -9,6 +8,6 @@ namespace pg.data.data.parameters.interfaces
         string GetId();
         void SetValueByString(string value);
         Type GetValueType();
-        PetroglyphParameterType GetParameterType();
+        bool IsSingleton();
     }
 }

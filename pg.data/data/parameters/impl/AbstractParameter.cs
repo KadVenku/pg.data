@@ -1,6 +1,5 @@
 ﻿using System;
 using pg.data.data.parameters.interfaces;
-using pg.data.data.parameters.types;
 
 namespace pg.data.data.parameters.impl
 {
@@ -34,8 +33,6 @@ namespace pg.data.data.parameters.impl
             return typeof(T);
         }
 
-        public abstract PetroglyphParameterType GetParameterType();
-
         protected abstract T GetDefaultValue();
 
         public virtual void SetValue(T value)
@@ -43,5 +40,7 @@ namespace pg.data.data.parameters.impl
             _valueInitallySet = true;
             _value = value;
         }
+
+        public abstract bool IsSingleton();
     }
 }

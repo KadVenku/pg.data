@@ -1,6 +1,4 @@
-﻿using pg.data.data.parameters.types;
-
-namespace pg.data.data.parameters.impl
+﻿namespace pg.data.data.parameters.impl
 {
     public class StringParameter : AbstractParameter<string>
     {
@@ -14,9 +12,9 @@ namespace pg.data.data.parameters.impl
             return GetValue();
         }
 
-        public override PetroglyphParameterType GetParameterType()
+        public override bool IsSingleton()
         {
-            return PetroglyphParameterType.StringType;
+            return true;
         }
 
         protected override string GetDefaultValue()

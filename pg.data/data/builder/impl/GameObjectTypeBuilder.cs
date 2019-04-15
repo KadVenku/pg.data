@@ -9,30 +9,11 @@ using pg.util.exceptions;
 
 namespace pg.data.data.builder.impl
 {
-    public class GameObjectTypeBuilder : IGameObjectBuilder<GameObjectType>
+    public class GameObjectTypeBuilder : AbstractGameObjectBuilder<GameObjectType>
     {
-        public GameObjectType Build(XElement xElement)
+        public override GameObjectType Build(XElement xElement)
         {
-            if (xElement == null)
-            {
-                throw new AttributeNullException($"Expected valid {typeof(XElement)} {nameof(xElement)}, but received null instead.");
-            }
-
-            if (!xElement.HasAttributes)
-            {
-                throw new InvalidXElementException($"The provided attribute {nameof(xElement)} should contain a \'Name\' attribute; but it didn't.");
-            }
-            
-            if (StringUtility.IsNullEmptyOrWhitespace(xElement.Attribute("Name")?.Value))
-            {
-                throw new InvalidXElementException($"The provided attribute {nameof(xElement)} should contain a \'Name\' attribute; but it didn't.");
-            }
-
-            if (!xElement.Elements().Any())
-            {
-                throw new InvalidXElementException($"The provided attribute {nameof(xElement)} does not contain any data.");
-            }
-
+            ValidateXElement(xElement);
             string gameObjectId = xElement.Attribute("Name")?.Value;
             GameObjectType gameObjectType = new GameObjectType(gameObjectId);
 #if DEBUG
@@ -42,7 +23,6 @@ namespace pg.data.data.builder.impl
             {
                 gameObjectType.SetParameterById(element.Name.ToString(), element.Value);
             }
-
             return gameObjectType;
         }
     }

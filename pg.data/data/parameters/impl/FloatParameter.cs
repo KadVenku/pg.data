@@ -1,5 +1,4 @@
 ﻿using kv.util;
-using pg.data.data.parameters.types;
 using pg.util;
 
 namespace pg.data.data.parameters.impl
@@ -17,9 +16,9 @@ namespace pg.data.data.parameters.impl
             return FloatUtility.Parse(GetValue());
         }
 
-        public override PetroglyphParameterType GetParameterType()
+        public override bool IsSingleton()
         {
-            return PetroglyphParameterType.FloatType;
+            return true;
         }
 
         protected override float GetDefaultValue()
